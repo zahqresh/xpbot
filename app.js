@@ -54,8 +54,8 @@ app.listen(process.env.PORT || 5000, () => {
 });
 
 //send req to keep bot online on free dynos
-// setInterval(() => {
-//   axios.get("invite-bot-cryptolegions.herokuapp.com/").then(() => {
-//     console.log("Req sent!");
-//   });
-// }, 50000);
+setInterval(() => {
+  axios.get("invite-bot-cryptolegions.herokuapp.com/").then(() => {
+    console.log("Req sent!");
+  });
+}, 50000);
