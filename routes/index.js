@@ -2,17 +2,17 @@ var express = require("express");
 var router = express.Router();
 const randomstring = require("randomstring");
 const random = require("../models/random");
-/* GET home page. */
-router.get("/", function (req, res, next) {
+/* GET link generator page. */
+router.get("/secret-generator", function (req, res, next) {
   //create a random string save to db
   res.render("index", {
     string: "Please generate link...",
   });
 });
 
-/* Post Home page */
+/* Post link generator page */
 
-router.post("/", (req, res) => {
+router.post("/secret-generator", (req, res) => {
   let string = randomstring.generate({
     length: 12,
     charset: "alphanumeric",
@@ -27,5 +27,9 @@ router.post("/", (req, res) => {
       });
     });
 });
+
+router.get('/',(req,res)=>{
+  res.json({res:"API IS RUNNING 🚀"})
+})
 
 module.exports = router;

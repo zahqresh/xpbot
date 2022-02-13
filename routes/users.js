@@ -2,6 +2,7 @@ var express = require("express");
 const db = require("../models/db");
 const random = require("../models/random");
 var router = express.Router();
+const dotenv = require('dotenv').config()
 
 /* GET users listing. */
 router.get("/invite/:id", function (req, res, next) {
@@ -39,10 +40,11 @@ router.post("/invite/:id", (req, res) => {
         //   invite_link: "Invite link",
         // });
         res.render("inviteLink", {
-          link: "Permanent invite link here",
+          link: process.env.PERM_INVITE_LINK,
         });
       });
   });
 });
+
 
 module.exports = router;

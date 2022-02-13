@@ -23,4 +23,4 @@ client.once("ready", () => {
 
 add_role(client);
 
-client.login("Invite link here");
+client.login(process.env.BOT_TOKEN); //the bot token

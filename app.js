@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const { connectDB } = require("./config/db_connect");
-
+const axios = require("axios");
 var app = express();
 
 //connect db
@@ -47,6 +47,15 @@ app.use(function (err, req, res, next) {
 });
 
 //get the bot up
-require('./utils/discord/discord')
+require("./utils/discord/discord");
 
-module.exports = app;
+app.listen(process.env.PORT || 5000, () => {
+  console.log("API ONLINE!");
+});
+
+//send req to keep bot online on free dynos
+// setInterval(() => {
+//   axios.get("invite-bot-cryptolegions.herokuapp.com/").then(() => {
+//     console.log("Req sent!");
+//   });
+// }, 50000);
