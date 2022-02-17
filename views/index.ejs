@@ -20,12 +20,121 @@
     <div class="jumbotron">
       <h1>Generator OneTime Link:</h1>
       <br />
-      <form action="/secret-generator" method="post">
+      <form action="/secret-generator/tester" method="post">
+        <h5 class="mt-3">Tester Role:</h5>
         <div class="row">
           <div class="col-lg-10">
             <input
               readonly
-              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= string%>"
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= tester%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/whitelist_role" method="post">
+        <h5 class="mt-3">Whitelist Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= whitelist_role%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/beast_master" method="post">
+        <h5 class="mt-3">Beast Master Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= beast_master%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/warrior_master" method="post">
+        <h5 class="mt-3">Warrior Master Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= warrior_master%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/legion_master" method="post">
+        <h5 class="mt-3">Legion Master Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= legion_master%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/monster_conqueror" method="post">
+        <h5 class="mt-3">Monster Conqueror Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= monster_conqueror%>"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn-primary btn btn-md w-100">
+              Generate
+            </button>
+          </div>
+        </div>
+      </form>
+      <form action="/secret-generator/king_of_nicah" method="post">
+        <h5 class="mt-3">King of Nicah Role:</h5>
+        <div class="row">
+          <div class="col-lg-10">
+            <input
+              readonly
+              value="https://invite-bot-cryptolegions.herokuapp.com/users/invite/<%= king_of_nicah%>"
               type="text"
               class="form-control"
             />

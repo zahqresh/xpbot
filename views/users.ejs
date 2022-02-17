@@ -19,7 +19,7 @@
   <body>
     <div class="text-center user-modal m-auto">
       <h3 class="">Get your invite link</h3>
-      <form action="/users/invite/<%= invite_id%>" method="post">
+      <form action="/users/invite/<%= invite_id%>/<%= created_for%>" method="post">
         <input
           name="discord_id"
           type="text"

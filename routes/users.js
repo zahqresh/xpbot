@@ -2,26 +2,29 @@ var express = require("express");
 const db = require("../models/db");
 const random = require("../models/random");
 var router = express.Router();
-const dotenv = require('dotenv').config()
+const dotenv = require("dotenv").config();
 
 /* GET users listing. */
 router.get("/invite/:id", function (req, res, next) {
-  random.exists({ random_string: req.params.id }, (err, bool) => {
-    console.log(bool);
-    if (bool != null) {
-      res.render("users", {
-        invite_id: req.params.id,
-      });
-    } else {
-      res.send("This link is used or invalid...");
-    }
-    if (err) {
+  random
+    .findOne({ random_string: req.params.id })
+    .then((doc) => {
+      console.log(doc);
+      if (doc != null) {
+        res.render("users", {
+          invite_id: req.params.id,
+          created_for: doc.created_for,
+        });
+      } else {
+        res.send("This link is used or invalid...");
+      }
+    })
+    .catch((err) => {
       res.send({ err: err });
-    }
-  });
+    });
 });
 
-router.post("/invite/:id", (req, res) => {
+router.post("/invite/:id/:created_for", (req, res) => {
   console.log(req.params);
   console.log(req.body);
   //get the unique id and delete
@@ -30,6 +33,7 @@ router.post("/invite/:id", (req, res) => {
     db({
       discord_username: req.body.discord_username,
       discord_id: req.body.discord_id,
+      registered_for: req.params.created_for,
     })
       .save()
       .then((doc) => {
@@ -45,6 +49,5 @@ router.post("/invite/:id", (req, res) => {
       });
   });
 });
-
 
 module.exports = router;
