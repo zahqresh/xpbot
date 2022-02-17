@@ -14,7 +14,7 @@ const admin = require("./models/admin");
 var passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
 var app = express();
-require("./Passport");
+require("./passport");
 //connect db
 connectDB();
 
