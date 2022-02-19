@@ -1,5 +1,6 @@
 const db = require("../../models/db");
 const dotenv = require("dotenv").config();
+
 module.exports = (client) => {
   client.on("messageCreate", (msg) => {
     if (msg.channel.id == process.env.VERIFY_CHANNEL_ID) {
@@ -36,7 +37,7 @@ module.exports = (client) => {
                   `${process.env.legion_master}`
                 );
                 break;
-              case "warrior_conqueror":
+              case "monster_conqueror":
                 mcRole = msg.guild.roles.cache.get(
                   `${process.env.warrior_conqueror}`
                 );

@@ -19,21 +19,30 @@
   <body>
     <div class="text-center user-modal m-auto">
       <h3 class="">Get your invite link</h3>
-      <form action="/users/invite/<%= invite_id%>/<%= created_for%>" method="post">
+      <form
+        action="/users/invite/<%= invite_id%>/<%= created_for%>"
+        method="post"
+      >
         <input
           name="discord_id"
           type="text"
           placeholder="discord id"
           class="mb-2 m-auto form-control"
-        />  
+        />
         <input
           name="discord_username"
           type="text"
           placeholder="discord username"
           class="m-auto form-control"
         />
-        <button type="submit" class="btn btn-light w-100 mt-3">Get</button>
+        <button type="submit" class="btn mb-3 btn-light w-100 mt-3">Get</button>
       </form>
+      <small class="mt-3"
+        ><a target="_blank"
+          href="https://www.dropbox.com/sh/8y0sj0na1z1tp98/AADMlsFjtvEIGTiq0Ma0Rihoa?dl=0&preview=Discord+ID1.png"
+          >Get discord ID & Username?</a
+        >
+      </small>
     </div>
   </body>
 </html>
