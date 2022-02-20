@@ -2,8 +2,8 @@
 body {
   padding: 50px;
   font-family: "Poppins", sans-serif;
-  background-color: #F3C5C5;
-  
+  background-color: black;
+  color: white;
 }
 
 a {
@@ -11,12 +11,12 @@ a {
 }
 
 .user-modal {
-  background-color: #041562;
+  background-color: darkgray;
 
   width: 400px;
   border-radius: 10px;
   padding: 20px;
-  color: #eeeeee;
+  color: white;
   
 }
 
