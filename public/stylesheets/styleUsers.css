@@ -11,7 +11,7 @@ a {
 }
 
 .user-modal {
-  background-color: darkgray;
+  background-color: #1e1e1e;
 
   width: 600px;
   border-radius: 10px;
@@ -47,4 +47,7 @@ a:hover {
 .insturctions {
   text-align: justify;
   text-justify: inter-word;
+}
+.discord-images-guide{
+  padding: 10rem 10rem;
 }
