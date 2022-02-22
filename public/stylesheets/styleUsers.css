@@ -27,11 +27,18 @@ a {
 a:hover {
   color: black;
 }
-
+.discord-images-guide{
+  padding: 10rem 10rem;
+}
 @media only screen and (max-width: 480px) {
   .user-modal {
     width: auto;
   }
+
+  .discord-images-guide{
+    padding: 0rem 0rem;
+  }
+
 }
 
 .btn-orange {
@@ -47,7 +54,4 @@ a:hover {
 .insturctions {
   text-align: justify;
   text-justify: inter-word;
-}
-.discord-images-guide{
-  padding: 10rem 10rem;
 }
