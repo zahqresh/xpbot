@@ -230,7 +230,7 @@ router.get("/api/get-roles/:role/:apikey", (req, res) => {
       .then((doc) => {
         console.log(doc);
         res.json({
-          link: `https://invite-bot-cryptolegions.herokuapp.com/users/invite/${doc.random_string}`,
+          link: `http://www.cryptolegions.link//users/invite/${doc.random_string}`,
         });
       });
   } else {
