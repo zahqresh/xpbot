@@ -40,7 +40,7 @@ module.exports = (client) => {
                   break;
                 case "monster_conqueror":
                   mcRole = msg.guild.roles.cache.get(
-                    `${process.env.warrior_conqueror}`
+                    `${process.env.monster_conqueror}`
                   );
                   break;
                 case "king_of_nicah":
