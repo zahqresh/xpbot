@@ -6,6 +6,31 @@ const random = require("../models/random");
 const dotenv = require("dotenv").config();
 var passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
+
+//Api endpoint for sending back links
+router.get("/api/get-roles/:role/:apikey", (req, res) => {
+  let string = randomstring.generate({
+    length: 12,
+    charset: "alphanumeric",
+  });
+
+  console.log(process.env.APIKEY);
+
+  const { apikey, role } = req.params;
+  if (apikey == process.env.APIKEY) {
+    random({ random_string: string, created_for: `${role}` })
+      .save()
+      .then((doc) => {
+        console.log(doc);
+        res.json({
+          link: `http://www.cryptolegions.link/users/invite/${doc.random_string}`, //updated
+        });
+      });
+  } else {
+    res.json({ err: "forbidden!" });
+  }
+});
+
 /* GET link generator page. */
 router.get("/secret-generator", auth, function (req, res, next) {
   //create a random string save to db
@@ -212,30 +237,6 @@ router.get("/login-error", (req, res) => {
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
-});
-
-//Api endpoint for sending back links
-router.get("/api/get-roles/:role/:apikey", (req, res) => {
-  let string = randomstring.generate({
-    length: 12,
-    charset: "alphanumeric",
-  });
-
-  console.log(process.env.APIKEY);
-
-  const { apikey, role } = req.params;
-  if (apikey == process.env.APIKEY) {
-    random({ random_string: string, created_for: `${role}` })
-      .save()
-      .then((doc) => {
-        console.log(doc);
-        res.json({
-          link: `http://www.cryptolegions.link/users/invite/${doc.random_string}`,
-        });
-      });
-  } else {
-    res.json({ err: "forbidden!" });
-  }
 });
 
 module.exports = router;
