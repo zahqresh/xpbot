@@ -23,7 +23,7 @@ router.get("/api/get-roles/:role/:apikey", (req, res) => {
       .then((doc) => {
         console.log(doc);
         res.json({
-          link: `http://www.cryptolegions.link/users/invite/${doc.random_string}`, //updated
+          link: `https://www.cryptolegions.link/users/invite/${doc.random_string}`, //updated
         });
       });
   } else {
