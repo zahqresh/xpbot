@@ -23,4 +23,5 @@ client.once("ready", () => {
 
 add_role(client);
 
+
 client.login(process.env.BOT_TOKEN); //the bot token
