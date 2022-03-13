@@ -18,14 +18,8 @@
     <link rel="stylesheet" href="/stylesheets/styleUsers.css" />
   </head>
   <body class="text-center">
-    <img
-     
-      class="mb-3 img-fluid"
-     width="40%"
-      src="/images/logo.png"
-      alt="logo"
-    />
-    <div class="text-center user-modal m-auto">
+    <img class="mb-3 img-fluid" width="40%" src="/images/logo.png" alt="logo" />
+    <!-- <div class="text-center user-modal m-auto">
       <h3 class="">Get Your Achievement Role on Discord</h3>
       <form
         action="/users/invite/<%= invite_id%>/<%= created_for%>"
@@ -47,6 +41,15 @@
           Get Your Discord Role Link
         </button>
       </form>
+    </div> -->
+    <div class="w-50 m-auto">
+      <a
+        href="https://discord.com/api/oauth2/authorize?client_id=744746895943008318&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fusers%2Fauth%2Fredirect&response_type=code&scope=identify"
+        type="submit"
+        class="btn mb-3 btn-orange w-100 mt-3"
+      >
+        Get Your Discord Role Link
+      </a>
     </div>
     <div class="instructions text-center mt-5">
       <h1>Instructions</h1>
@@ -97,5 +100,12 @@
         planet Nicah!
       </div>
     </div>
+    <script src="/javascripts/users.js"></script>
+    <script>
+      var url = window.location.href;
+      let id = url.split("invite/")[1];
+      saveID(id);
+      createdFor(`<%= created_for%>`);
+    </script>
   </body>
 </html>
