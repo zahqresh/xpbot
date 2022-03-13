@@ -26,7 +26,7 @@ function redirect() {
   localStorage.setItem("code", code);
   console.log("Redirecting to get...");
   window.location.replace(
-    `https://www.cryptolegions.link//users/add-user?code=${localStorage.getItem(
+    `https://www.cryptolegions.link/users/add-user?code=${localStorage.getItem(
       "code"
     )}&id=${localStorage.getItem("ID")}&createdfor=${localStorage.getItem(
       "created_for"
