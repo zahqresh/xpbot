@@ -70,7 +70,7 @@ router.get("/add-user", async (req, res) => {
         client_secret: process.env.client_secret,
         code,
         grant_type: "authorization_code",
-        redirect_uri: `http://localhost:5000/users/auth/redirect`,
+        redirect_uri: `https://www.cryptolegions.link/users/auth/redirect`,
         scope: "identify",
       }),
       headers: {
