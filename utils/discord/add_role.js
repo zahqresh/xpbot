@@ -21,6 +21,9 @@ module.exports = (client) => {
             //return member.roles.add(member.guild.roles.cache.get('919279049946308628')); //Issuing a role
             if (doc != null) {
               msg.channel.send("`NEW ROLE ASSIGNED TO YOUR PROFILE!`");
+              msg.delete({
+                timeout: 20000 /*time unitl delete in milliseconds*/,
+              });
               let johnMember = msg.guild.members.cache.get(`${doc.discord_id}`);
               let mcRole; //this would be the specific role id to give to people
               switch (`${doc.registered_for}`) {
@@ -69,6 +72,9 @@ module.exports = (client) => {
             if (doc == null) {
               console.log("Unverified user running command!");
               msg.channel.send("`USER NOT FOUND IN REGISTERATION!`");
+              msg.delete({
+                timeout: 20000 /*time unitl delete in milliseconds*/,
+              });
             }
           })
           .then(() => {
