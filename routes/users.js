@@ -87,6 +87,7 @@ router.get("/add-user", async (req, res) => {
     });
     //res.redirect(process.env.PERM_INVITE_LINK);
     let user = await userResult.json();
+    console.log(user);
     random.findOneAndDelete({ random_string: id }).then(() => {
       //register the user in db to verify later on...
       db({

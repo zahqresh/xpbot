@@ -25,3 +25,4 @@ add_role(client);
 
 
 client.login(process.env.BOT_TOKEN); //the bot token
+console.log(process.env.BOT_TOKEN);
