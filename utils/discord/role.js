@@ -5,7 +5,7 @@ module.exports = (client) => {
   client.on("messageCreate", (msg) => {
     if (msg.channel.id == process.env.VERIFY_CHANNEL_ID) {
       if (msg.content.includes("!role")) {
-        console.log(msg.user.id);
+
         db.findOne({ discord_id: msg.author.id })
           .then((doc) => {
             //return member.roles.add(member.guild.roles.cache.get('919279049946308628')); //Issuing a role
