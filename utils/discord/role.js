@@ -5,8 +5,8 @@ module.exports = (client) => {
   client.on("messageCreate", (msg) => {
     if (msg.channel.id == process.env.VERIFY_CHANNEL_ID) {
       if (msg.content.includes("!role")) {
-        console.log(user.id);
-        db.findOne({ discord_id: user.id })
+        console.log(msg.user.id);
+        db.findOne({ discord_id: msg.user.id })
           .then((doc) => {
             //return member.roles.add(member.guild.roles.cache.get('919279049946308628')); //Issuing a role
             if (doc != null) {
@@ -78,7 +78,7 @@ module.exports = (client) => {
             }
           })
           .then(() => {
-            db.findOneAndDelete({ discord_id: user.id }).then((data) => {
+            db.findOneAndDelete({ discord_id: msg.user.id }).then((data) => {
               // console.log(data);
               console.log(`${data} deleted after adding role!`);
             });

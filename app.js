@@ -45,8 +45,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -76,7 +74,7 @@ app.listen(process.env.PORT || 5000, () => {
 
 //send req to keep bot online on free dynos
 setInterval(() => {
-  axios.get("https://invite-bot-cryptolegions.herokuapp.com/").then(() => {
-    console.log("Req sent!");
+  axios.get("https://www.cryptolegions.link/").then((res) => {
+    console.log(res.data);
   });
-}, 50000);
+}, 1800000); //send req after 30 min
