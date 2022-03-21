@@ -5,22 +5,17 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 const { connectDB } = require("./config/db_connect");
-const app = express()
+const app = express();
 const axios = require("axios");
 
 //connect db
 connectDB();
-
-
-
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -49,3 +44,8 @@ app.listen(process.env.PORT || 5000, () => {
   console.log("API ONLINE!");
 });
 
+setInterval(() => {
+  axios.get("https://ludufi-bot.herokuapp.com/").then(() => {
+    console.log("Awaking ludufi bot... 👀");
+  });
+}, 20000);
