@@ -5,7 +5,7 @@ var names_str, pts_string;
 module.exports = (client) => {
   client.on("messageCreate", (msg) => {
     if (msg.content.includes("$xpboard")) {
-      if (msg.author.id == "676624147589365801") {
+      if (msg.author.id == `${process.env.ADMIN_ID}`) {
         db.find()
           .sort({ xp_points: "descending" })
           .then((doc) => {

@@ -4,7 +4,7 @@ const dotenv = require("dotenv").config();
 module.exports = (client) => {
   client.on("messageCreate", (msg) => {
     if (msg.content.includes("$resetxp,")) {
-      if (msg.author.id == "676624147589365801") {
+      if (msg.author.id == `${process.env.ADMIN_ID}`) {
         const user = msg.mentions.users.first();
         if (user === undefined) {
           console.log("USER MENTIONED NOT FOUND!");
