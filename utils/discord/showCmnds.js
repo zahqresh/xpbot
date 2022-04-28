@@ -26,6 +26,10 @@ module.exports = (client) => {
           value: `shows xp leaderboard`,
         })
         .addFields({
+          name: "$convoLeaderboard",
+          value: `Shows interaction leaderboard`,
+        })
+        .addFields({
           name: "$resetxp, @mentionedUser",
           value: `restores xp of all users`,
         })
