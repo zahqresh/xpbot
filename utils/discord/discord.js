@@ -8,6 +8,8 @@ const resetPoints = require("./resetPoints");
 const leaderBoard = require("./leaderBoard");
 const purgeAll = require("./purgeAll");
 const showCmnds = require("./showCmnds");
+const convoTracking = require("./convoTracking");
+const convoLeaderboard = require("./convoLeaderboard");
 
 // Create a new client instance
 const client = new Client({
@@ -29,14 +31,20 @@ assginPoints(client);
 getUserPoints(client);
 
 //reset user points
-resetPoints(client)
+resetPoints(client);
 
 //get the leaderboard
-leaderBoard(client)
+leaderBoard(client);
 
 //pruge xp
-purgeAll(client)
+purgeAll(client);
 
 //get cmds
-showCmnds(client)
+showCmnds(client);
+
+//track conversation
+convoTracking(client);
+
+//convo leaderboard
+convoLeaderboard(client)
 client.login(process.env.BOT_TOKEN); //the bot token
